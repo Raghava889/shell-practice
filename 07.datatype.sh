@@ -11,4 +11,4 @@ echo "Total number: $SUM"
 
 MOVIES=("RRR","Varanasi","Pushpa") #indes always start from zero
 
-echo "Movies are: ${$MOVIES[@]}"
+echo "Movies are: ${MOVIES[@]}"
