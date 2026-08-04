@@ -9,7 +9,7 @@ echo "Total number: $SUM"
 
 #arrays
 
-MOVIES=("RRR","Varanasi","Pushpa") #indes always start from zero
+MOVIES=("RRR" "Varanasi" "Pushpa") #indes always start from zero
 
 echo "Movies are: ${MOVIES[@]}"
 echo "First movie name is: ${MOVIES[0]}"
