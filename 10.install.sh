@@ -8,16 +8,6 @@ exit 1
 
 fi
 
-echo "Installing the nginx package"
+echo "removing the packages"
 
-dnf list installed nginx
-
-if [ $? -eq 0 ]; then 
-
-echo "Package already installed"
-
-else 
-
-dnf install nginx -y
-
-fi
+dnf remove nginx -y
