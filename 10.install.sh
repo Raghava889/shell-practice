@@ -12,8 +12,11 @@ dnf list installed mysql
 if [ $? -eq 0 ]; then
 
 echo "Package already installed...."
+
 elase 
 
-dnf install mysql
+echo "installing mysql package"
+
+dnf install mysql -y
 
 fi
