@@ -13,7 +13,7 @@ if [ $? -eq 0 ]; then
 
 echo "Package already installed...."
 
-elase 
+else 
 
 echo "installing mysql package"
 
