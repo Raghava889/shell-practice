@@ -3,20 +3,21 @@
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
-echo "Please get the root access"
+echo "Please get the root acceess"
 exit 1
+
 fi
 
-dnf list installed mysql
+echo "Installing the nginx package"
 
-if [ $? -eq 0 ]; then
+dnf list installed nginx
 
-echo "Package already installed...."
+if [ $? -eq 0 ]; then 
+
+echo "Package already installed"
 
 else 
 
-echo "installing mysql package"
-
-dnf install mysql -y
+dnf install nginx -y
 
 fi
