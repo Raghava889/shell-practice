@@ -10,4 +10,4 @@ fi
 
 echo "removing the packages"
 
-dnf remove nginx -y
+dnf remove mysql -y
