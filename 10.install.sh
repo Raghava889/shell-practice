@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USER_ID=$(id -u)
+USERID=$(id -u)
 
-if [USER_ID -ne 0 ]; then
+if [ $USERID -ne 0 ]; then
 echo "Please get the root access"
 exit 1
 fi
