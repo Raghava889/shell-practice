@@ -26,5 +26,5 @@ if [ $? -eq 0 ]; then
 echo "mysql is already installed"
 else
 dnf install mysql -y
-VALIDATE mysql
+
 fi
