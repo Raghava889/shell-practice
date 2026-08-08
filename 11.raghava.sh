@@ -1,8 +1,18 @@
-#/bin/bash
-Number=$1
+#!/bin/bash
 
-if [ $Number -ge 20 ]; then
-echo "The given $Number is grater the 20"
+NUMBER=$1
+
+# gt - greater than
+# lt - less than
+# eq - equal
+# ne - not equal
+# ge - greater than or equal
+# le - less than or equal
+
+if [ $NUMBER -gt 20 ]; then
+    echo "Given number $NUMBER is greater to 20"
+elif [ $NUMBER -eq 20 ]; then
+    echo "Given number $NUMBER is equal to 20"
 else
-echo "The given $Number is less then 20"
+    echo "Given number $NUMBER is less than 20"
 fi
