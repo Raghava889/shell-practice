@@ -1,18 +1,24 @@
 #!/bin/bash
 
-NUMBER=$1
+USERID=$(id -u) 
+if [ $USERID -ne 0 ]; then
+echo "Please get the root access"
+exit 0
+fi
 
-# gt - greater than
-# lt - less than
-# eq - equal
-# ne - not equal
-# ge - greater than or equal
-# le - less than or equal
+dnf list installed nginx
 
-if [ $NUMBER -gt 20 ]; then
-    echo "Given number $NUMBER is greater to 20"
-elif [ $NUMBER -eq 20 ]; then
-    echo "Given number $NUMBER is equal to 20"
+if [ $? -eq 0 ] ; then
+echo "Package already installed"
 else
-    echo "Given number $NUMBER is less than 20"
+
+dnf install nginx -y
+
+if [ $? -eq 0 ]; then
+echo "Package installed successfully"
+
+else
+echo "Package installation failed"
+
+    fi
 fi
