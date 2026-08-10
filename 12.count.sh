@@ -1,7 +1,10 @@
-#/bin/bash
+#!/bin/bash
+NUMBER=$1
 
-USERID=$(id -u)
-if [ $USERID -ne 0 ]; then
-echo "get the root access"
-exit
-fi
+if [ $NUMBER -gt 20 ]; then
+echo "The given number is grater then 20"
+elif 
+if [ $NUMBER -eq 20 ]; then
+echo "The given number is qual to 20"
+else 
+echo "The given number is less then 20"
