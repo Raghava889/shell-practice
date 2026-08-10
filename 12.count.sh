@@ -3,7 +3,7 @@
 NUM1=10
 NUM2=20
 
-let=$(($NUM1+$NUM2))
+SUM=$(($NUM1+$NUM2))
 echo "the sum is $sum"
 
 ###array###
