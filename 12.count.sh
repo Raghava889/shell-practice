@@ -3,7 +3,7 @@
 NUM1=10
 NUM2=20
 
-SUM=$(($NUM1+$NUM2))
+sum=$(($NUM1+$NUM2))
 echo "the sum is $sum"
 
 ###array###
