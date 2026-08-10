@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for i in {1...100}
-do
-echo $i
-done
+echo "Please enter the user name:"
+
+read USERNAME
+
+echo "$USERNAME is :"
+
