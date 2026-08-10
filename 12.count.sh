@@ -1,14 +1,5 @@
 #!/bin/bash
 
-echo "Please enter the user name:"
+TIME_STAMP=$(date)
 
-read USER_NAME
-
-echo "User name is $USER_NAME"
-
-echo "Please enter the password::"
-
-read -s PASSWORD
-
-echo "Password is $PASSWORD"
-
+echo "Today is $TIME_STAMP"
