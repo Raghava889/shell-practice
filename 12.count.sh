@@ -9,4 +9,4 @@ echo "the sum is $sum"
 ###array###
 
 Movies=("Varanasi" "Pushpa" "Akhanda")
-echo "movie name is ${$Movies[0]}"
+echo "movie name is ${Movies[0]}"
