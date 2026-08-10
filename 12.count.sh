@@ -10,3 +10,4 @@ echo "the sum is $sum"
 
 Movies=("Varanasi" "Pushpa" "Akhanda")
 echo "movie name is ${Movies[@]}"
+echo "script name is $0"
