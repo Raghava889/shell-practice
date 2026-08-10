@@ -2,11 +2,11 @@
 NUMBER=$1
 
 if [ $NUMBER -gt 20 ]; then
-echo "The given number is grater then 20"
+echo "The given $NUMBER is grater then 20"
 elif 
 if [ $NUMBER -eq 20 ]; then
-echo "The given number is qual to 20"
+echo "The given $NUMBER is qual to 20"
 else 
-echo "The given number is less then 20"
+echo "The given $NUMBER is less then 20"
     fi
  fi   
