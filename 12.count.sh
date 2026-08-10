@@ -1,13 +1,14 @@
 #!/bin/bash
 
+echo "Please enter the user name:"
 
 
-START_TIME=$(date +%s)
 
-sleep 10
+echo "User name is $USER_NAME"
 
-END_TIME=$(date +%s)
+echo "Please enter the password::"
 
-TOTAL_TIME=$(($END_TIME-$START_TIME))
+read -s PASSWORD
 
-echo "This is the Total time $TOTAL_TIME second"
+echo "Password is $PASSWORD"
+
