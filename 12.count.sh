@@ -1,6 +1,7 @@
-#!/bin/bash
+#/bin/bash
 
-echo "Please list the script name $0"
-echo "All variable passwd to scriot $@"
-echo "what is the process id $$"
-echo "which user running the script: $USER"
+NUM1=10
+NUM2=20
+
+sum=$($NUM1+$NUM2)
+echo "the sum is $sum"
