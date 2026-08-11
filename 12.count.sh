@@ -1,6 +1,8 @@
 #!/bin/bash
 
 USERID=$(id -u)
+LOGS_DIR=/var/log/shell-script
+LOGS_FILE="$LOGS_DIR/$0.log" # /home/ec2-user/shell-logs/10-logs.sh.log
 
 if [ $USERID -ne 0 ]; then
 
@@ -19,11 +21,11 @@ VALIDATE(){
     fi
 }
  
- dnf list installed mysql
+ dnf list installed mysql &>> $LOGS_FILE
  if [ $? -ne 0 ]; then
  echo "package not installed now installing the package"
- dnf install mysql -y
- VALIDATE "MYSQL" $?
+ dnf install mysql -y &>> $LOGS_FILE
+ VALIDATE "mysql" $?
  else
  echo "Package already installed"
  fi
