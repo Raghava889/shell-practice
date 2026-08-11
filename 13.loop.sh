@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# C-style for loop syntax in Bash
-for ((i=0; i<5; i++))
+for i in {1..100}
 do
-    echo "$i"
+print $I
 done
