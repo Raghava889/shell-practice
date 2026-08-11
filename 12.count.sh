@@ -11,7 +11,7 @@ exit 1
 
 fi
 
-VALIDATE(){
+Raghava(){
     if [ $2 -ne 0 ]; then
     echo "Installing $1 is faild"
     exit 1
@@ -25,7 +25,7 @@ VALIDATE(){
  if [ $? -ne 0 ]; then
  echo "package not installed now installing the package"
  dnf install mysql -y &>> $LOGS_FILE
- VALIDATE "mysql" $?
+ Raghava "mysql" $?
  else
  echo "Package already installed"
  fi
