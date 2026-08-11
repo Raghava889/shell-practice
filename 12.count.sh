@@ -16,9 +16,9 @@ VALIDATE(){
 fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>> $LOG_FILE
 if [ $? -ne 0 ]; then
 echo "Package not installed and installing now"
-dnf install mysql -y
+dnf install mysql -y &>> $LOG_FILE
 VALIDATE "mysql" $?
 fi
