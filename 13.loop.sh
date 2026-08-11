@@ -2,5 +2,5 @@
 
 for i in {1..100}
 do
-print $i
+print "$i"
 done
