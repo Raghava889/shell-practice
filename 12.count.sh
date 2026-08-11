@@ -21,4 +21,6 @@ if [ $? -ne 0 ]; then
 echo "Package not installed and installing now"
 dnf install mysql -y &>> $LOG_FILE
 VALIDATE "mysql" $?
+else
+echo "Package installed alredy"
 fi
