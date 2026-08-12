@@ -8,16 +8,22 @@ for instance in "$@"
 do
     echo "Launching instance: $instance"
     
+    # 1. Fixed the query string to accurately grab the InstanceId string
     INSTANCE_ID=$(aws ec2 run-instances \
         --image-id "$AMI_ID" \
         --instance-type t3.micro \
         --security-groups "roboshop-common" "roboshop-$instance" \
         --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value="roboshop-'"$instance"'"}]' \
-        --query "Instances[0].InstanceId" \
+        --query "Instances[*].InstanceId" \
         --output text)
         
     echo "Instance Id: $INSTANCE_ID"
 
+    # 2. Give AWS 15 seconds to boot the instance and assign an IP address
+    echo "Waiting for IP address allocation..."
+    sleep 15
+
+    # 3. Fetch the IP address based on instance type
     if [ "$instance" == "frontend" ]; then
         IP=$(aws ec2 describe-instances --instance-ids "$INSTANCE_ID" \
             --query 'Reservations[*].Instances[*].PublicIpAddress' \
@@ -30,7 +36,9 @@ do
         R53_RECORD="$instance.$DOMAIN_NAME"
     fi
 
-    #### Updating R53 Record ####
+    echo "Fetched IP: $IP"
+
+    # 4. Update Route 53 Record
     aws route53 change-resource-record-sets \
         --hosted-zone-id "$ZONE_ID" \
         --change-batch '
