@@ -9,10 +9,10 @@ if [ $USER_ID -ne 0 ]; then
     exit 1
 fi
 
-id -a raghava &>> $LOG_FILE
+id -a pavan &>> $LOG_FILE
 if [ $? -ne 0 ]; then 
     echo "User is not present creating the user"
-    useradd pavab &>> $LOG_FILE
+    useradd pavan &>> $LOG_FILE
 if [ $? -eq 0 ]; then 
     echo "user created successfully"
     
