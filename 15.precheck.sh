@@ -9,6 +9,8 @@ if [ $USER_ID -ne 0 ]; then
     exit 1
 fi
 
-SERVER_LOG=$(ps -ef|wc -l;uname -r;ip a;df -hT;cat /etc/fstab) 
-    echo "$SERVER_LOG" &> $LOG_FILE
-    echo "Precheck completed. Log saved to: $LOG_FILE"
+id -a raghava
+if [ $? -ne 0 ]; then 
+    echo "User is not present"
+    useradd raghava
+fi
