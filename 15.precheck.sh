@@ -13,7 +13,8 @@ id -a raghava
 if [ $? -ne 0 ]; then 
     echo "User is not present creating the user"
     useradd raghava
-    if [ $? -eq 0 ]; then 
+if [ $? -eq 0 ]; then 
     echo "user created successfully"
     
+fi
 fi
