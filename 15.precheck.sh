@@ -1,4 +1,6 @@
 #!/bin/bash
+LOG_DIR=/var/log/raghava
+LOG_FILE=$LOG_DIR/$0.log
 
 USER_ID=$(id -u)
 if [ $USER_ID -ne 0 ]; then
@@ -16,9 +18,9 @@ fi
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>> $LOG_file
 if [ $? -ne 0 ]; then
-    dnf install $package -y
+    dnf install $package -y &>> $LOG_file
 VALIDATE "$package" $?
 else
  echo "Package is already installed"
